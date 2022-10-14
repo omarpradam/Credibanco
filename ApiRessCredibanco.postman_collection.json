@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "73122685-cc3c-464f-8edf-89d568f9b30f",
+		"name": "ApiRessCredibanco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22975084"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/tarjetas/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"tarjeta\":{\r\n\"numerTarjeta\": \"12346578909\",\r\n\"titular\":\"omar parda\",\r\n\"cedula\":\"1020804683\",\r\n\"tipo\":\"Crédito\",\r\n\"telefono\":3007124884\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/tarjetas/enrolado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroTarjeta\":\"12346578909\",\r\n    \"numeroValidacion\":75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/enrolado",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"enrolado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/tarjetas/tarjetaByNumber/12346578909",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/tarjetaByNumber/12346578909",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"tarjetaByNumber",
+						"12346578909"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/tarjetas/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroTarjeta\":\"12346578900\",\r\n    \"numeroValidacion\":33\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/transacciones/crearTrasaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"númeroReferencia\":\"26571248\",\r\n    \"totalCompra\":\"457123451\",\r\n    \"pan\":\"12346578909\",\r\n    \"direccion\":\"calle 185 d 4 - 21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/transacciones/crearTrasaccion",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transacciones",
+						"crearTrasaccion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,5 @@
+package com.credibanco.app.Transaccion.infrastructura.impl;
+
+public class TransaccionesService_Impl {
+
+}

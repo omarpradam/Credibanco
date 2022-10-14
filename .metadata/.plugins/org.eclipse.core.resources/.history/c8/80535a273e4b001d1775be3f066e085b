@@ -1,0 +1,22 @@
+package com.credibanco.app.Repository;
+
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.TarjetaDto;
+import com.credibanco.app.Entidades.Tarjeta;
+
+public interface TarjetaServiceRepository {
+
+	public Iterable<Tarjeta> findAll();
+	public Page<Tarjeta> findAll( Pageable pageable);
+	public Optional<Tarjeta> findById(Long id);
+	public Tarjeta saver(TarjetaDto tarjeta);
+	public void deleteByNumero(Integer numero);
+	
+	
+	
+}

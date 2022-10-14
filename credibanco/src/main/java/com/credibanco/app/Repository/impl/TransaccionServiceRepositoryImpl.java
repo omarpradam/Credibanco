@@ -1,0 +1,79 @@
+package com.credibanco.app.Repository.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.TarjetaDto;
+import com.credibanco.app.Entidades.Tarjeta;
+import com.credibanco.app.Entidades.Transaccion;
+import com.credibanco.app.Repository.TarjetaRepositoy;
+import com.credibanco.app.Repository.TransaccionRepositoy;
+import com.credibanco.app.Repository.interfaces.TarjetaServiceRepository;
+import com.credibanco.app.Repository.interfaces.TransaccionServiceRepository;
+
+@Service
+public class TransaccionServiceRepositoryImpl implements TransaccionServiceRepository{
+
+	@Autowired
+	private TransaccionRepositoy tarjetaRepositoy;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Transaccion> findAll() {
+		
+		return tarjetaRepositoy.findAll();
+	}
+
+
+	@Override
+	@Transactional(readOnly = true)
+	public Optional<Transaccion> findById(Long id) {
+		
+		return tarjetaRepositoy.findById(id);
+	}
+
+	@Override
+	@Transactional
+	public Transaccion saver(Transaccion transaccion) {
+		
+		return tarjetaRepositoy.save(transaccion);
+	}
+
+	@Override
+	public List<Transaccion> findByIdNum(String numero) {
+		// TODO Auto-generated method stub
+		return tarjetaRepositoy.findByNumerTarjeta(numero);
+	}
+
+
+
+	@Override
+	@Transactional
+	public void deleteByNumero(Long id) {
+	tarjetaRepositoy.deleteById(id);
+		
+	}
+
+
+	@Override
+	public Transaccion update(Transaccion Transaccion, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+		
+	
+
+
+}

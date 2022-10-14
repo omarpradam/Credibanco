@@ -1,0 +1,51 @@
+package com.credibanco.app.Tarjeta.infrastructuta.impl;
+
+
+
+
+import java.sql.Date;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.RespustaTarjetaDto;
+import com.credibanco.app.Dto.TarjetaDTO;
+import com.credibanco.app.Entidades.Tarjeta;
+import com.credibanco.app.Repository.TarjetaRepositoy;
+import com.credibanco.app.Tarjeta.infrastructuta.TarjetaService;
+
+
+@Service("TarjetaService_Impl")
+public class TarjetaService_Impl  implements TarjetaService {
+
+	@Autowired
+	private TarjetaRepositoy tarjetaRepositoy;
+	
+	@Override
+	public RespuestaServicio create(TarjetaDTO tarjetaDTO) throws Exception {
+		
+		Tarjeta tarjeta = tarjetaDTO.getTarjeta();
+		
+		Random aleatorio = new Random(System.currentTimeMillis());
+		
+		Integer intAletorio = aleatorio.nextInt(100) + 1;
+		
+		tarjeta.setNumerValidacion(intAletorio);
+		tarjeta.setEstado("Creada");
+		
+		tarjeta = tarjetaRepositoy.save(tarjeta);
+		
+		RespustaTarjetaDto respuest = new RespustaTarjetaDto();
+		
+		String numero = tarjeta.getNumerTarjeta();
+		numero  = numero.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
+		
+		respuest.setNumeroTarjeta(numero);
+		respuest.setNumeroValidacion(intAletorio);
+		
+		return new RespuestaServicio("00","Exito",respuest);
+	}
+
+}

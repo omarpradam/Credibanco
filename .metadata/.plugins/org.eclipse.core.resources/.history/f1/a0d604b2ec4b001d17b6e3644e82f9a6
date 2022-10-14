@@ -1,0 +1,12 @@
+package com.credibanco.app.Entidades;
+
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "transaccion")
+@NamedQuery(name = "Transaccion.findAll", query = ("SELECT e FROM Transaccion e "))
+public class Transaccion {
+
+}

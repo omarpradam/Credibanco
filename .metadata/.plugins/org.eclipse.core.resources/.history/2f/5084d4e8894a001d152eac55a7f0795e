@@ -1,0 +1,10 @@
+package com.credibanco.app.repository.dao;
+
+import java.io.Serializable;
+
+import com.credibanco.app.modelo.Tarjeta;
+
+public interface TarjetaDAO  {
+	
+
+}

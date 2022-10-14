@@ -1,0 +1,14 @@
+package com.credibanco.app.Tarjeta.infrastructuta;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.RespustaTarjetaDto;
+import com.credibanco.app.Dto.TarjetaDTO;
+
+public interface TarjetaService {
+	
+	
+	public RespuestaServicio create(TarjetaDTO tarjetaDTO) throws Exception;
+	
+	public RespuestaServicio enrolarTarjeta(RespustaTarjetaDto respustaTarjetaDto) throws Exception;
+
+}

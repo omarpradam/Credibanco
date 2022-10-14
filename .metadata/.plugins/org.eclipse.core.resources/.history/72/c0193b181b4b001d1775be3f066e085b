@@ -1,0 +1,49 @@
+package com.credibanco.app.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.credibanco.app.Entidades.Tarjeta;
+import com.credibanco.app.Repository.TarjetaRepositoy;
+
+@Service
+public class TarjetaServiceImpl implements TarjetaService{
+
+	@Autowired
+	private TarjetaRepositoy tarjetaRepositoy;
+	
+	@Override
+	public Iterable<Tarjeta> findAll() {
+		
+		return tarjetaRepositoy.findAll();
+	}
+
+	@Override
+	public Page<Tarjeta> findAll(Pageable pageable) {
+		
+		return tarjetaRepositoy.findAll(pageable);
+	}
+
+	@Override
+	public Optional<Tarjeta> findById(Long id) {
+		
+		return tarjetaRepositoy.findById(id);
+	}
+
+	@Override
+	public Tarjeta saver(Tarjeta tarjeta) {
+		
+		return tarjetaRepositoy.save(tarjeta);
+	}
+
+	@Override
+	public void deleteByNumero(Integer numero) {	
+		tarjetaRepositoy.deleBynumero(numero);
+		
+	}
+
+}

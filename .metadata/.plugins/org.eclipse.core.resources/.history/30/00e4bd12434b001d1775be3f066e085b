@@ -1,0 +1,20 @@
+package com.credibanco.app.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.credibanco.app.Dto.TarjetaDto;
+import com.credibanco.app.Entidades.Tarjeta;
+
+@Repository
+public interface TarjetaRepositoy extends JpaRepository<Tarjeta, Long> {
+
+	Tarjeta save(TarjetaDto tarjeta);
+	Optional<Tarjeta> findByNumerTarjeta(String numerTarjeta);
+
+	
+	
+}

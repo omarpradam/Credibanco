@@ -1,0 +1,31 @@
+package com.credibanco.app.Repository.DAO;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.hibernate.Session;
+
+public interface GenericDAO <T, PK  extends Serializable> {
+	
+	public void persist(T t) throws Exception;
+
+	public T findById(Class<T> clazz, PK id) throws Exception;
+
+	public boolean update(T t) throws Exception;
+
+	public boolean delete(T t) throws Exception;
+
+	public  T merge(T t) throws Exception;
+	
+	public boolean merge(List<T> ts) throws Exception;
+
+	public  Session getSession() throws Exception;
+
+	public List<T> findAll(Class<T> clazz) throws Exception;
+	
+	public List<T> findFilter(T t) throws Exception;
+	
+	public boolean saveList(List<T> t) throws Exception;
+	
+
+}

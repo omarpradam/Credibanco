@@ -1,0 +1,61 @@
+package com.credibanco.app.Dto;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@XmlRootElement
+public class RespuestaServicio {
+	
+
+	private static final long serialVersionUID = -6732293943395453366L;
+
+
+
+	private String codigoRespuesta = "";
+	
+	private String mensaje = "";
+	
+	private Object respuesta = null;
+	
+	public RespuestaServicio(){}
+	
+	
+
+	public RespuestaServicio(String mensaje, String codigoRespuesta, Object respuesta) {
+		super();
+		this.codigoRespuesta = codigoRespuesta;
+		this.respuesta = respuesta;
+		this.mensaje = mensaje;
+	}
+
+
+	public String getCodigoRespuesta() {
+		return codigoRespuesta;
+	}
+
+	public void setCodigoRespuesta(String codigoRespuesta) {
+		this.codigoRespuesta = codigoRespuesta;
+	}
+
+	
+	public Object getRespuesta() {
+		return respuesta;
+	}
+
+	
+	public void setRespuesta(Object respuesta) {
+		this.respuesta = respuesta;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+}

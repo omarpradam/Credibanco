@@ -1,0 +1,31 @@
+package com.credibanco.app.Dto;
+
+public class RespustaTarjetaDto {
+
+	private Long numeroTarjeta;
+	private Integer numeroValidacion;
+	public RespustaTarjetaDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public RespustaTarjetaDto(Long numeroTarjeta, Integer numeroValidacion) {
+		super();
+		this.numeroTarjeta = numeroTarjeta;
+		this.numeroValidacion = numeroValidacion;
+	}
+	public Long getNumeroTarjeta() {
+		return numeroTarjeta;
+	}
+	public void setNumeroTarjeta(Long numeroTarjeta) {
+		this.numeroTarjeta = numeroTarjeta;
+	}
+	public Integer getNumeroValidacion() {
+		return numeroValidacion;
+	}
+	public void setNumeroValidacion(Integer numeroValidacion) {
+		this.numeroValidacion = numeroValidacion;
+	}
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.credibanco.app.repository.dao;
+
+public interface TarjetaDAO {
+
+}

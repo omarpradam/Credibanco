@@ -1,0 +1,5 @@
+package com.credibanco.app.Dto;
+
+public class ResponseDto {
+
+}

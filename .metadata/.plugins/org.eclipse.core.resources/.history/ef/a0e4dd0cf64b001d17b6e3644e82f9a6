@@ -1,0 +1,105 @@
+package com.credibanco.app.Entidades;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "transaccion")
+@NamedQuery(name = "Transaccion.findAll", query = ("SELECT e FROM Transaccion e "))
+public class Transaccion {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
+	private Long id;
+
+	@Column(name = "direccion")
+	private String direccion;
+
+	@Column(name = "total_compra")
+	private String totalCompra;
+
+	@Column(name = "numer_tarjeta", length = 15)
+	private String numerTarjeta;
+
+	@Column(name = "numero_referencia")
+	private String numeroReferencia;
+
+	@Column(name = "estado", length = 10)
+	private String estado;
+	
+	@Column(name="creaate_ta")
+	private Date create;
+
+	public Transaccion() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transaccion(Long id, String direccion, String totalCompra, String numerTarjeta, String numeroReferencia,
+			String estado) {
+		super();
+		this.id = id;
+		this.direccion = direccion;
+		this.totalCompra = totalCompra;
+		this.numerTarjeta = numerTarjeta;
+		this.numeroReferencia = numeroReferencia;
+		this.estado = estado;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getTotalCompra() {
+		return totalCompra;
+	}
+
+	public void setTotalCompra(String totalCompra) {
+		this.totalCompra = totalCompra;
+	}
+
+	public String getNumerTarjeta() {
+		return numerTarjeta;
+	}
+
+	public void setNumerTarjeta(String numerTarjeta) {
+		this.numerTarjeta = numerTarjeta;
+	}
+
+	public String getNumeroReferencia() {
+		return numeroReferencia;
+	}
+
+	public void setNumeroReferencia(String numeroReferencia) {
+		this.numeroReferencia = numeroReferencia;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+}

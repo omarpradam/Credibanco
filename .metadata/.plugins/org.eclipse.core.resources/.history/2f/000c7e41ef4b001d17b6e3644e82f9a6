@@ -1,0 +1,17 @@
+package com.credibanco.app.Dto;
+
+public class TrasaccionDto {
+
+	
+	
+	private String númeroReferencia;
+	
+	private String totalCompra;
+	
+	private String pan;
+	
+	
+	private String diraccion;
+	
+	
+}

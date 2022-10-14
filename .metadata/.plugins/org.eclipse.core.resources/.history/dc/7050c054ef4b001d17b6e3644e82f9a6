@@ -1,0 +1,58 @@
+package com.credibanco.app.Dto;
+
+public class TrasaccionDto {
+
+	private String númeroReferencia;
+
+	private String totalCompra;
+
+	private String pan;
+
+	private String diraccion;
+
+	public TrasaccionDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TrasaccionDto(String númeroReferencia, String totalCompra, String pan, String diraccion) {
+		super();
+		this.númeroReferencia = númeroReferencia;
+		this.totalCompra = totalCompra;
+		this.pan = pan;
+		this.diraccion = diraccion;
+	}
+
+	public String getNúmeroReferencia() {
+		return númeroReferencia;
+	}
+
+	public void setNúmeroReferencia(String númeroReferencia) {
+		this.númeroReferencia = númeroReferencia;
+	}
+
+	public String getTotalCompra() {
+		return totalCompra;
+	}
+
+	public void setTotalCompra(String totalCompra) {
+		this.totalCompra = totalCompra;
+	}
+
+	public String getPan() {
+		return pan;
+	}
+
+	public void setPan(String pan) {
+		this.pan = pan;
+	}
+
+	public String getDiraccion() {
+		return diraccion;
+	}
+
+	public void setDiraccion(String diraccion) {
+		this.diraccion = diraccion;
+	}
+
+}

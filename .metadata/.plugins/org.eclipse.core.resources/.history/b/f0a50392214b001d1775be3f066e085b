@@ -1,0 +1,47 @@
+package com.credibanco.app.Tarjeta.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.TarjetaDTO;
+import com.credibanco.app.Entidades.Tarjeta;
+import com.credibanco.app.Service.TarjetaService;
+
+
+@RestController
+@RequestMapping("/api/tarjetas")
+public class TerjetaController {
+
+	private RespuestaServicio respuestaServicio;
+	
+	
+	@Autowired
+	private TarjetaService tarjetaService;
+	
+	// crear tarjeta 
+	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody RespuestaServicio create(@RequestBody TarjetaDTO tarjetaDTO) {
+		try {
+			return tarjetaService.saver(tarjetaDTO);
+		} catch (Exception e) {
+			
+			respuestaServicio = new RespuestaServicio(e.getMessage(), "01", false);
+		}
+		return respuestaServicio;
+	}
+	
+	
+	
+	
+}

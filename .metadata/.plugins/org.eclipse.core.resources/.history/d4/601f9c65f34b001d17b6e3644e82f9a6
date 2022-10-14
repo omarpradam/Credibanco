@@ -1,0 +1,28 @@
+package com.credibanco.app.Transaccion.infrastructura.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.TrasanccionDto;
+import com.credibanco.app.Entidades.Transaccion;
+import com.credibanco.app.Transaccion.infrastructura.ITransaccionesService;
+
+@Service("TransaccionesService_Impl")
+public class TransaccionesService_Impl  implements ITransaccionesService{
+
+	@Override
+	public RespuestaServicio createTransaccion(TrasanccionDto trasanccionDto) throws Exception {
+	
+		Transaccion transaccion = new Transaccion();
+		
+		transaccion.setDireccion(trasanccionDto.getDiraccion());
+		transaccion.setEstado("Aprobada");
+		transaccion.setTotalCompra(trasanccionDto.getTotalCompra());
+		transaccion.setNumeroReferencia(trasanccionDto.getNúmeroReferencia());
+		transaccion.setNumerTarjeta(trasanccionDto.getPan());
+		
+		
+		return null;
+	}
+
+}

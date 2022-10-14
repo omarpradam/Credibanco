@@ -1,0 +1,5 @@
+package com.credibanco.app.Tarjeta.infrastructura.impl;
+
+public interface TarjetaService {
+
+}

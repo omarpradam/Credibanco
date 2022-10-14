@@ -1,0 +1,90 @@
+package com.credibanco.app.Tarjeta.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.credibanco.app.Dto.ResponseDto;
+import com.credibanco.app.Dto.RespuestaServicio;
+import com.credibanco.app.Dto.RespustaTarjetaDto;
+import com.credibanco.app.Dto.TarjetaDto;
+import com.credibanco.app.Entidades.Tarjeta;
+import com.credibanco.app.Repository.interfaces.TarjetaServiceRepository;
+import com.credibanco.app.Tarjeta.infrastructuta.ITarjetaService;
+
+
+@RestController
+@RequestMapping("/api/tarjetas")
+public class TerjetaController  {
+
+	
+	private RespuestaServicio respuestaServicio = null;
+	
+	
+	@Autowired
+	private ITarjetaService tarjetaService;
+	
+	// crear tarjeta 
+	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody RespuestaServicio create(@RequestBody TarjetaDto tarjetaDTO) {
+		try {
+			return tarjetaService.create(tarjetaDTO);
+		} catch (Exception e) {
+			
+			respuestaServicio = new RespuestaServicio("Fallido", "01", false);
+		}
+		return respuestaServicio;
+	}
+	
+	// crear realizar en enrole de la tarjeta
+	
+	@RequestMapping(value = "/enrolado", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody RespuestaServicio enrolarTarjeta(@RequestBody RespustaTarjetaDto tarjetaDTO) {
+		try {
+			return tarjetaService.enrolarTarjeta(tarjetaDTO);
+		} catch (Exception e) {
+			
+			respuestaServicio = new RespuestaServicio(e.getMessage() , "01", false);
+		}
+		return respuestaServicio;
+	}
+	
+	//Consultar tarjeta 
+	
+	@RequestMapping(value = "/tarjetaByNumber/{numero}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody ResponseDto sucursaleByIdUser(@PathVariable String numero) {
+
+		try {
+			return tarjetaService.tarjetaByNumero(numero);
+		} catch (Exception e) {
+			return null;
+	}
+	
+	
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody RespuestaServicio eliminarTarjeta(@RequestBody RespustaTarjetaDto tarjetaDTO) {
+		try {
+			return tarjetaService.deleteTarjeta(tarjetaDTO);
+		} catch (Exception e) {
+			
+			respuestaServicio = new RespuestaServicio(e.getMessage() , "01", false);
+		}
+		return respuestaServicio;
+	}
+	
+}

@@ -1,0 +1,27 @@
+1665618219416	Delete element
+1665619169598	Move compilation unit
+1665619174544	Delete element
+1665619219021	Delete element
+1665619230261	Delete element
+1665679282969	Delete element
+1665679286945	Delete element
+1665680000189	Rename type 'TerjetaRepositoy'
+1665681588241	Rename package 'com.credibanco.app.service'
+1665683996943	Rename package 'com.credibanco.app.Controller'
+1665684018799	Move compilation unit
+1665684105898	Move compilation unit
+1665684139984	Delete element
+1665684494159	Copy package
+1665684515001	Move compilation units
+1665684520504	Delete element
+1665684534025	Rename type 'TarjetaService'
+1665684556181	Rename type 'TarjetaServiceImpl'
+1665696205522	Rename type 'TarjetaDTO'
+1665696242777	Rename type 'TarjetaService'
+1665697429221	Rename type 'Pan'
+1665698190279	Move compilation unit
+1665698213665	Move compilation unit
+1665771724678	Copy compilation unit
+1665771814027	Copy compilation unit
+1665771862197	Copy compilation unit
+1665772680972	Rename type 'TrasaccionDto'

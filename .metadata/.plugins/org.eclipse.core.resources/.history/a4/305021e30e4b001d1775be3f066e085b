@@ -1,0 +1,5 @@
+package com.credibanco.app.Repository.DAO;
+
+public interface GenericDAO {
+
+}
